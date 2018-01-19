@@ -1,0 +1,84 @@
+<!--index.wxml-->
+
+<view class='job_header'>
+<view class='header_bg'>
+ <view class='header_heat'>
+  <span class="qy_hot">企业热度</span>
+   <span class="qy_num">2339</span>
+ </view>
+  <view class='qy_content'>
+   <view class='qy_company'>
+   <image src='../../images/Avatar.png' class='qy_default_img'></image>
+   </view>
+   <view class='qy_name'>北京城市网邻信息技术有限公司</view>
+   <view  class='qy_detail'>
+    <span class="qy_sign">互联网</span>
+    <span class="qy_sign">电子商务</span>
+    <span class="qy_last">100-499</span>
+   </view>
+
+  <view class='qy_cert'>
+   <view class='cert_main'><i class="cert_rz"></i> 营业执照认证</view>
+   <view class='cert_main'><i class="cert_rz"></i> 求职保障</view>
+   <view class='cert_main'><i class="cert_rz"></i> 人力资源企业认证</view>
+  </view>
+
+  </view>
+</view>
+</view>
+
+
+<view class='qy_user'>
+<view class='user_title'>历史浏览 <span class="user_num">5999</span>人,今日访问</view>
+<view class='user_imags'>
+
+  <view class='img_float'>
+    <image src="../../images/icon_seo.png" class='user_head'></image>
+  </view>
+  <view class='img_float'>
+    <image src="../../images/icon_seo.png" class='user_head'></image>
+  </view>
+  <view class='img_float'>
+    <image src="../../images/icon_seo.png" class='user_head'></image>
+  </view>
+
+</view>
+</view>
+
+
+
+<view class='doc_split'></view>
+
+<view class='list_title'>
+  <view class='list_font'>在职招聘</view>
+  <view class="list_split"></view>
+ </view>
+<!--列表-->
+<template is="JobList"></template>
+<template name="JobList" data="">
+
+ <view class='job_none'> HR有点懒，还没有发布职位</view>
+  <view class="jobItem">
+    <view class="top">
+      <p class="name">装卸工叉车铲车司机</p>
+      <view class="jobInfo">
+        <span class="salary">4000-7500元/月</span>
+        <span class="cate">装卸/搬运工</span>
+      </view>
+    
+    <view class="bottom">
+      <view class="signs">
+        <span data-id="10" class="signItem">话补</span>
+        <span data-id="9" class="signItem">五险一金</span>
+        <span data-id="8" class="signItem">交通补助</span>
+        <span data-id="7" class="signItem">加班补助</span>
+        <span data-id="6" class="signItem">包吃</span>
+      </view>
+    </view>
+    <view class="apply" 
+    bindtap='callPhone'
+    data-num='13501065178'
+    >联系</view>
+   </view>
+  </view>
+</template>

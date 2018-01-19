@@ -1,0 +1,98 @@
+.head_fixed{
+  position: fixed;
+  width: 100%;
+  height: 270rpx;
+  z-index: 99;
+}
+.ranking_header{
+  background-image: linear-gradient(132deg, #FF7D5A 4%, #F5552B 100%);
+  height: 160rpx;
+  padding-top:41rpx;
+  padding-left:51rpx;
+}
+.rank_left{
+  display: inline-block;
+  margin-right: 40%
+}
+.rank_right{
+  display: inline-block; 
+}
+.left_font{
+  font-size: 22rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+.left_num{
+  font-size: 80rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+
+
+.scroll-view_H{
+  padding-top: 270rpx;
+}
+
+.rank_tips{
+  background: #F8F8F8;
+  height: 66rpx;
+  font-size: 22rpx;
+  color: #333333;
+  letter-spacing: 0;
+  padding: 0rpx 30rpx;
+  line-height: 66rpx;
+}
+
+.tips_right{
+  text-decoration: underline;
+  float: right;
+  font-size: 22rpx;
+  color: #151515;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.rank_list{
+  height: 150rpx;
+  margin: 0rpx 30rpx;
+  border-bottom: 1px solid #EFEFF4;
+  line-height: 150rpx;
+}
+.list_num{
+  display: inline-block;
+  font-size: 30rpx;
+  color: #333333;
+  letter-spacing: 0;
+  width: 80rpx;
+  font-weight: 500;
+}
+
+.list_icon{
+  display: inline-block;
+  padding-right: 20rpx;
+}
+.list_name{
+  display: inline-block;
+  font-size: 28rpx;
+  color: #000000;
+  letter-spacing: 0;
+  max-width: 400rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.list_data{
+  float: right;
+   font-size: 28rpx;
+   color: #FF5013;
+   letter-spacing: 0;
+
+}
+.qy_default_img{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  border: 1px solid #EFEFF4;
+  vertical-align: middle;
+}

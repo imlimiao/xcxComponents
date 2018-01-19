@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/ranking/ranking"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "58集团招聘",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_seo.png",
+        "selectedIconPath": "images/icon_seo_HL.png"
+      },
+      {
+        "pagePath": "pages/ranking/ranking",
+        "text": "排行榜",
+        "iconPath": "images/icon_speed.png",
+        "selectedIconPath": "images/icon_speed_HL.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志",
+        "iconPath": "images/icon_speed.png",
+        "selectedIconPath": "images/icon_speed_HL.png"
+      }
+    ]
+  }
+}

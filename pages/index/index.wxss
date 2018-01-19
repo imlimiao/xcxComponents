@@ -1,0 +1,302 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.containMain{
+  background: #F6F6F6;
+}
+
+/*头部*/
+.header_bg{
+  background: url("http://pic2.58.com/job/xcx/qiyehao/bg_green.png") no-repeat;
+  width: 750rpx;
+  padding-top: 214rpx;
+  background-size: 750rpx 345rpx;
+  position: relative
+}
+.header_heat{
+  float: right;
+  background: rgba(22,14,12,0.20);
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius:30rpx;
+  width:250rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 39rpx;
+  right: 0rpx;
+}
+.qy_hot{
+  font-size: 22rpx;
+  color: #FFFFFF;
+  opacity: 0.58;
+  padding-right: 20rpx;
+}
+.qy_num{
+  font-size: 30rpx;
+  color: #FFFFFF;
+}
+.qy_content{
+  background: #FFFFFF;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.05);
+  border-radius: 10px;
+  height: 194rpx;
+  padding-top:120rpx;
+  margin: 0rpx 20rpx;
+  position: relative;
+}
+.qy_company{
+  background: #FFFFFF;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.05);
+  width: 160rpx;
+  height:160rpx;
+  border-radius: 160rpx;
+  position: absolute;
+  top:-80rpx;
+  left: 40%;
+}
+.qy_name{
+  font-size: 36rpx;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center
+}
+.qy_detail{
+ text-align: center
+}
+
+.qy_sign{
+  font-size: 26rpx;
+  color: #888888;
+  letter-spacing: 0;
+  padding: 0rpx 14rpx;
+  position: relative;
+}
+
+.qy_sign:after{
+  content: "";
+  position: absolute;
+  height: 28rpx;
+  width: 14rpx;
+  border-right: 1px solid #D6D6D6;
+  right: 0;
+  top: 50%;
+  margin-top: -12rpx;
+}
+
+.qy_last{
+  font-size: 26rpx;
+  color: #888888;
+  letter-spacing: 0;
+  padding: 0rpx 14rpx;
+}
+
+.cert_main{
+  font-size: 24rpx;
+  color: #AAAAAA;
+  display: inline-block;
+  padding: 0px 15rpx;
+}
+
+.qy_cert{
+  padding: 0rpx 20rpx;
+}
+
+
+.qy_user{
+   padding: 0rpx 25rpx;
+   margin-top:50rpx;
+   margin-bottom: 10rpx
+}
+.user_title{
+  font-size: 26rpx;
+  color: #888888;
+  letter-spacing: 0;
+  margin-bottom: 20rpx;
+}
+
+.user_head{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.user_imags{
+  padding-bottom: 50rpx;
+  padding-left:36rpx;
+  overflow: hidden;
+}
+
+.doc_split{
+  height: 10rpx;
+  background: #F4F4F4;
+}
+
+.jobItem{
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding:30rpx 30rpx 0rpx 30rpx;
+}
+.top{
+  border-bottom: 1px solid #F3F3F3;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+.name{
+  color: #000;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  max-width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.salary{
+  display: inline-block;
+  font-size: 28rpx;
+  color: #FF552E;
+  letter-spacing: 0;
+  position: relative;
+  padding-right: 14rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-right: 16rpx;
+}
+.salary:after{
+  content: "";
+  position: absolute;
+  height: 24rpx;
+  width: 14rpx;
+  border-right: 1px solid #D6D6D6;
+  right: 0;
+  top: 50%;
+  margin-top: -12rpx;
+}
+.cate{
+  display: inline-block;
+  font-size:26rpx;
+  color:#B2B2B2;
+}
+.jobInfo{
+  margin-bottom: 6rpx;
+}
+.job_none{
+  font-size: 26rpx;
+  color: #999999;
+  letter-spacing: 0;
+  text-align: center;
+  margin-top:50rpx;
+  display: none;
+}
+
+.apply{
+  width: 120rpx;
+  height: 58rpx;
+  border-radius: 6rpx;
+  border: 1px solid #FA563B;
+  line-height: 58rpx;
+  position: absolute;
+  right: 0;
+  top: 45rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #FF5A5A;
+}
+
+.bottom{
+  position: relative;
+  height:52rpx;
+  overflow: hidden;
+}
+
+.signs{
+  height:52rpx;
+  overflow: hidden;
+}
+
+.signItem{
+  padding: 2rpx 10rpx;
+  background: #fff;
+  letter-spacing: 0;
+  margin-right:10rpx;
+  font-size: 22rpx;
+  color: #8F8F8F;
+  border: 1px solid #DCDCDC;
+}
+
+.list_title{
+  text-align: center;
+  padding-top:40rpx;
+}
+
+.list_font{
+  font-size: 36rpx;
+  color: #000000;
+}
+
+.list_split{
+  display: inline-block;
+  width: 50rpx;
+  height:26rpx;
+  border-top:6rpx solid #FF5A5a;
+}
+
+.img_float{
+  float: left;
+}
+.user_head_first{
+   border: 2px solid red;
+  border-radius: 70rpx;
+}
+.user_head{
+  border: 2px solid #fff;
+  border-radius: 70rpx;
+  margin-left: -35rpx;
+}
+.user_num{
+  font-size: 26rpx;
+  color: #151515;
+  letter-spacing: 0;
+  line-height: 37rpx;
+}
+.qy_default_img{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 160rpx;
+}
+
+.cert_rz{
+  background: url("http://pic2.58.com/job/xcx/qiyehao/505.png") no-repeat;
+  width: 34rpx;
+  height: 34rpx;
+  background-size: 34rpx 34rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+

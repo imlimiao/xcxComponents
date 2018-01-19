@@ -1,0 +1,28 @@
+<!--排行榜头部-->
+<view class='head_fixed'>
+  <view class='ranking_header'>
+    <view class='rank_left'> 
+      <view class='left_font'>当前排名</view>
+      <view class='left_num'>10</view>
+    </view>
+    <view class='rank_right'> 
+      <view class='left_font'>当前热度</view>
+      <view class='left_num'>1034</view>
+    </view>
+  </view>
+
+  <view class='rank_tips'>
+  热度排行榜每日根据点赞数量进行排名
+  <span class="tips_right">查看主页></span>
+  </view>
+</view>
+
+
+  <scroll-view class="scroll-view_H" scroll-x >
+    <view class='rank_list'>
+      <view class="list_num">1</view>
+      <view class="list_icon"><image src='../../images/Avatar.png' class='qy_default_img'></image></view>
+      <view class='list_name' bindtap='showModal'>北京五八信息技术有限公司</view>
+      <view class='list_data'>4000</view>
+    </view>
+  </scroll-view>
