@@ -24,5 +24,7 @@
     * 代码需要合理注释
     * 代码结构需要重构（命名-BFC 结构）
 
-
+* 如果是本地运行，需要将app.js globaldata 手动加入
+  * enterpriseid:'51037401813520',
+  * appid:'wx6d20c8e925cb6a10',
      

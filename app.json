@@ -7,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#F2F2F2",
-    "navigationBarTitleText": "58集团招聘",
+    "navigationBarTitleText": "招聘小程序",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 20
