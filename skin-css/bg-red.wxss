@@ -1,0 +1,32 @@
+.info-head{
+  background: url("//img.58cdn.com.cn/job/xcx/qiyehao/bg_red.png") no-repeat;
+  width: 750rpx;
+  padding-top: 214rpx;
+  background-size: 750rpx 345rpx;
+  position: relative
+}
+
+.bottom-split{
+  display: inline-block;
+  width: 50rpx;
+  height:18rpx;
+  border-top:6rpx solid #FF5A5a;
+  margin-top: 10rpx;
+}
+
+.job-apply{
+  width: 120rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  position: absolute;
+  right: 0;
+  top: 45rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #FF5A5A;
+}
+
+.job-apply::before {
+  border-radius: 6px;
+  border: 1px solid #FA563B;
+}

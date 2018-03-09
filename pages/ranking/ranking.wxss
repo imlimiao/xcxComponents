@@ -1,40 +1,39 @@
-.head_fixed{
+.rank-list{
   position: fixed;
   width: 100%;
   height: 270rpx;
   z-index: 99;
 }
-.ranking_header{
+
+.rank-list-head{
   background-image: linear-gradient(132deg, #FF7D5A 4%, #F5552B 100%);
   height: 160rpx;
   padding-top:41rpx;
   padding-left:51rpx;
 }
-.rank_left{
+
+.rank-list-head-left{
   display: inline-block;
   margin-right: 40%
 }
-.rank_right{
+
+.rank-list-head-right{
   display: inline-block; 
 }
-.left_font{
+
+.rank-list-head-font{
   font-size: 22rpx;
   color: #FFFFFF;
   letter-spacing: 0;
 }
-.left_num{
+
+.rank-list-head-num{
   font-size: 80rpx;
   color: #FFFFFF;
   letter-spacing: 0;
 }
 
-
-
-.scroll-view_H{
-  padding-top: 270rpx;
-}
-
-.rank_tips{
+.rank-content{
   background: #F8F8F8;
   height: 66rpx;
   font-size: 22rpx;
@@ -44,23 +43,27 @@
   line-height: 66rpx;
 }
 
-.tips_right{
+.rank-content-right{
   text-decoration: underline;
   float: right;
   font-size: 22rpx;
   color: #151515;
   letter-spacing: 0;
-  line-height: 30px;
+  line-height: 66rpx;
 }
 
-.rank_list{
-  height: 150rpx;
-  margin: 0rpx 30rpx;
-  border-bottom: 1px solid #EFEFF4;
-  line-height: 150rpx;
+.rank-scroll{
+  padding-top: 270rpx;
 }
-.list_num{
-  display: inline-block;
+
+.rank-scroll-list{
+  height: 75px;
+  margin: 0rpx 30rpx;
+  line-height: 75px;
+}
+
+.rank-scroll-list-num{
+  float:left;
   font-size: 30rpx;
   color: #333333;
   letter-spacing: 0;
@@ -68,31 +71,34 @@
   font-weight: 500;
 }
 
-.list_icon{
-  display: inline-block;
+.rank-scroll-list-icon{
+  float:left;
   padding-right: 20rpx;
 }
-.list_name{
-  display: inline-block;
+
+.rank-scroll-list-name{
+  float:left;
   font-size: 28rpx;
   color: #000000;
   letter-spacing: 0;
-  max-width: 400rpx;
+  max-width: 480rpx;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.list_data{
-  float: right;
+
+.rank-scroll-list-hot{
+   float: right;
    font-size: 28rpx;
    color: #FF5013;
    letter-spacing: 0;
-
+   font-weight:500;
 }
-.qy_default_img{
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 80rpx;
+
+.rank-scroll-list-icon-img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: 1px solid #EFEFF4;
   vertical-align: middle;
 }

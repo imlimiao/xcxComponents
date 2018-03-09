@@ -1,0 +1,10 @@
+<!--components/bgModal/bgModal.wxml-->
+<template name="modal-loading">
+  <view class="modal-loading" style="display:{{data?'none':'block'}}">
+      <image class="modal-loading-image" src="https://img.58cdn.com.cn/job/xcx/qiyehao/loading.gif" />
+      <p class="modal-loading-font"> 加载中</p>
+  </view>
+  <view class="modal-loading-layout" style="display:{{data?'none':'block'}}" > </view>
+</template>
+
+

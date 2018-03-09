@@ -1,19 +1,13 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+/**
+ * 判断是否为空对象
+ * @param {Object} obj 
+ */
+function isEmptyObject(obj) {
+  for (let t in obj)
+    return !1;
+  return !0
 }
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-module.exports = {
-  formatTime: formatTime
+export default {
+  isEmptyObject
 }

@@ -1,0 +1,59 @@
+<import src="../../html-view/index.wxml" />
+<import src="../../components/bgModal/bgModal.wxml" />
+<view class='page' style= "display:{{isloading?'block':'none'}} ">
+  <template is="detailTemplate"   data="{{...detailData}}"></template>
+  <template name="detailTemplate">
+    <!--详情页职位基本信息-->
+    <view class='detail-head zp-border-bottom'>
+      <view class='detail-head-title'>{{title}}</view>
+      <view class='detail-head-type'>{{require}}</view>
+      <view class='detail-head-salary'>{{salary}}</view>
+      <view class='detail-head-item'>
+        <view class="detail-head-wel zp-border" wx:for="{{welfare}}" wx:key="infoId">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <!--详情页职位地址-->
+    <view class='address-head'>
+      <view class='address-head-list'>
+        <view class='address-head-list-font'>工作地址</view>
+      </view>
+    </view>
+
+    <view class="detail-content">
+      <view class='detail-content-address'> 
+        <icon class='detail-content-address-icon'></icon>
+        <view class='detail-content-address-sq'>{{addressMap}}</view>
+        <view class='detail-content-address-detail'> {{workAddress}}</view>
+      </view>
+    </view>
+
+    <view class='address-head'>
+      <view class='address-head-list'>
+        <view class='address-head-list-font'>职位描述</view>
+      </view>
+
+      <view class='work-describe'> 
+        <template is="html-view" data="{{data: content}}" />
+      </view>
+    </view>
+
+    <view class="detail-foot  {{isiPhoneX?'detail-foot-isPhoneX':'d_foot_a'}}">
+      <view class='detail-foot-left'>  
+        <button class='detail-foot-left-bton' open-type="share" bindtap="onshareapp"> </button>
+        <i class='detail-foot-left-bton-icon'></i> 
+        <p >分享</p>
+      </view>
+      <view class='detail-foot-right' data-telid="{{infoId}}" bindtap="getPhoneNum">电话联系</view>
+    </view>
+  </template>
+</view>
+
+<template is="modal-loading" data="{{data: isloading}}" ></template>
+<template is="share-backto-index" data="{{data: isiPhoneX}}" > </template>
+<template name="share-backto-index">
+     <view class="share-backto {{data?'share-backto-isPhoneX':'d_foot_a'}}">
+      <image class="share-backto-image" src="https://img.58cdn.com.cn/job/xcx/qiyehao/icon_share.png" bindtap="goBackToIndex" />
+    </view>
+</template>

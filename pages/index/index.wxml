@@ -1,84 +1,150 @@
 <!--index.wxml-->
+<import src="../../html-view/index.wxml" />
+<import src="../../components/bgModal/bgModal.wxml" />
+<view class='page' style= "height:{{clientHeight}};overflow:{{overflow}};display:{{isloading?'block':'none'}}">
+  <scroll-view scroll-y="{{isScroll}}">
+    <template is="qyInfoTemplate"   data="{{...qyhotdata}}"></template>
+    <template name="qyInfoTemplate">
+      <view class='info-head'>
+        <view class='info-head-heat' bindtap='getRankList'>
+          <span class="info-head-heat-hot">企业热度</span>
+          <span class="info-head-heat-num">{{count}}</span>
+        </view>
 
-<view class='job_header'>
-<view class='header_bg'>
- <view class='header_heat'>
-  <span class="qy_hot">企业热度</span>
-   <span class="qy_num">2339</span>
- </view>
-  <view class='qy_content'>
-   <view class='qy_company'>
-   <image src='../../images/Avatar.png' class='qy_default_img'></image>
-   </view>
-   <view class='qy_name'>北京城市网邻信息技术有限公司</view>
-   <view  class='qy_detail'>
-    <span class="qy_sign">互联网</span>
-    <span class="qy_sign">电子商务</span>
-    <span class="qy_last">100-499</span>
-   </view>
+        <view class='info-content' catchtap='showqymodal'>
+          <view class='info-content-logo' wx:if="{{headImg.length > 0}}">
+            <image src="{{headImg}}" class='content-logo-icon' ></image>
+          </view>
+          <view class='info-content-logo'  wx:else> 
+            <image src="../../images/Avatar.png"  class='content-logo-icon'></image>
+          </view>
 
-  <view class='qy_cert'>
-   <view class='cert_main'><i class="cert_rz"></i> 营业执照认证</view>
-   <view class='cert_main'><i class="cert_rz"></i> 求职保障</view>
-   <view class='cert_main'><i class="cert_rz"></i> 人力资源企业认证</view>
-  </view>
+          <view class='company-name'>{{name}}</view> 
+          <view  class='company-detail'>
+            <span class="company-detail-trade">{{trade}}</span>
+            <span class="company-detail-scale">{{size}}</span>
+          </view>
 
-  </view>
-</view>
-</view>
-
-
-<view class='qy_user'>
-<view class='user_title'>历史浏览 <span class="user_num">5999</span>人,今日访问</view>
-<view class='user_imags'>
-
-  <view class='img_float'>
-    <image src="../../images/icon_seo.png" class='user_head'></image>
-  </view>
-  <view class='img_float'>
-    <image src="../../images/icon_seo.png" class='user_head'></image>
-  </view>
-  <view class='img_float'>
-    <image src="../../images/icon_seo.png" class='user_head'></image>
-  </view>
-
-</view>
-</view>
-
-
-
-<view class='doc_split'></view>
-
-<view class='list_title'>
-  <view class='list_font'>在职招聘</view>
-  <view class="list_split"></view>
- </view>
-<!--列表-->
-<template is="JobList"></template>
-<template name="JobList" data="">
-
- <view class='job_none'> HR有点懒，还没有发布职位</view>
-  <view class="jobItem">
-    <view class="top">
-      <p class="name">装卸工叉车铲车司机</p>
-      <view class="jobInfo">
-        <span class="salary">4000-7500元/月</span>
-        <span class="cate">装卸/搬运工</span>
+          <view class='company-cert'>
+            <view class='company-cert-sign'>
+            <i class="xcxsprite {{authModel.zhizhao.authKey}}"></i> 
+            <p class="company-cert-font">{{authModel.zhizhao.des}}</p>
+          </view>
+          <view wx:if="{{authModel.daizhao==1}}">
+            <view class='company-cert-sign'><i class="company-cert-hrcert"></i> 人力资源企业认证</view>
+          </view>
+          </view>
+        </view>
       </view>
     
-    <view class="bottom">
-      <view class="signs">
-        <span data-id="10" class="signItem">话补</span>
-        <span data-id="9" class="signItem">五险一金</span>
-        <span data-id="8" class="signItem">交通补助</span>
-        <span data-id="7" class="signItem">加班补助</span>
-        <span data-id="6" class="signItem">包吃</span>
+
+      <view class='modal-window bounceOut' wx:if='{{showmodal==true}}' >
+        <view  class="modal-window-content" >
+          <view class='modal-window-content-name'>{{name}}</view>
+          <template is="html-view" data="{{data: content}}" ></template>
+        </view>
+        <view class="modal-window-content-bottom"></view>
+        <view class='closed_bton' catchtap='hideqymodal'></view>
+        <!-- <icon type="clear" size="60" bindtap='hideqymodal'  class='closed_bton'></icon> -->
+      </view>
+      <view class='layoutfix' wx:if='{{showmodal==true}}'></view>
+    </template>
+
+    <template is="browseTempalte" data="{{...qyphotosinfo}}"></template>
+    <template name="browseTempalte">
+      <view class='visit-content'>
+        <view class='visit-content-head'>历史浏览 <span class="visit-content-pvnum">{{pv||999}}</span>人,今日访问</view>
+        <view class='visit-content-images'>
+          <view class='visit-content-images-item' wx:if='{{avatars.length>0}}' >
+            <view class='image-float'   wx:for="{{avatars}}" wx:key="{}">
+              <image src="{{item}}" class='image-float-item'></image>
+            </view>
+          </view>
+
+          <view wx:else class='visit-content-images-item'> 
+            <view class='image-float'>
+              <image src="../../images/default-image.jpg"  class='image-float-defalut'></image>
+            </view>
+          </view>
+
+          <view class='visit-right'>
+            <view wx:if="{{likedState==1}}"> 
+              <view class='heartmain heartselect' bindtap='addnumtips'> </view>
+            </view>
+            <view wx:else> 
+              <view class='heartmain heart' bindtap='addnumtips'></view>   
+            </view>
+            <view class='visit-right-tips'>{{count}}</view>
+          </view>
+        </view>
+      </view>
+    </template>
+
+    <view class='line-spilt'></view>
+    <view class='line-title'>
+      <view class='line-font'>在职招聘</view>
+      <view class="bottom-split"></view>
+    </view>
+
+    <!--列表-->
+    <template is="jobListTemplate" data="{{...joblistdata}}"></template>
+    <template name="jobListTemplate">
+      <view wx:if="{{jobInfoList.length==0}}">
+        <view class='list-null'> HR有点懒，还没有发布职位</view>
+      </view>
+      <view wx:else> 
+        <view class="job-items" wx:for="{{jobInfoList}}" wx:key="infoId">
+          <view
+            class="job-items-head zp-border-bottom"
+            catchtap='gotoDetail'
+            data-localname='{{item.action.content.local_name}}'
+            data-listname='{{item.action.content.list_name}}'
+            data-infoid='{{item.action.content.infoID}}' 
+            data-url='{{item.action.content.data_url}}' 
+          >
+            <p class="job-items-title">{{item.title}}</p>
+            <view class="job-items-post">
+              <span class="job-items-post-salary">{{item.salary}}</span>
+              <span class="job-items-post-cate">{{item.jobName}}</span>
+            </view>
+            <view class="job-signs">
+              <view class="job-signs-item" >
+                <span data-id="10" class="job-signs-item-d zp-border">{{item.recruitNum}}</span>
+                <span data-id="9" class="job-signs-item-d zp-border">{{item.eduRequirements}}</span>
+                <span data-id="8" class="job-signs-item-d zp-border">{{item.workExperience}}</span>
+              </view>
+            </view>
+            <view
+              class="job-apply zp-border"
+              catchtap='gotoDetail'
+              data-localname='{{item.action.content.local_name}}'
+              data-listname='{{item.action.content.list_name}}'
+              data-infoid='{{item.action.content.infoID}}' 
+              data-url='{{item.action.content.data_url}}' 
+            >查看</view>
+          </view>
+        </view>
+        <view class="loadclass" wx:if="{{lastPage==true}}">
+          没有更多了。。。
+        </view>
+        <view class="loadclass" wx:else> 
+          <view class="loader loader-1">
+            <view class="loader-outter"></view>
+            <view class="loader-inner"></view>
+          </view>
+          正在加载中。。。
+        </view>
+      </view>
+    </template>
+
+    <view class='share_main'>
+      <button open-type='share' class='bton_share_yc'></button>
+      <view  class='bton_share'>
+        <i class="sharebton"></i>
+        <p>分享</p>
       </view>
     </view>
-    <view class="apply" 
-    bindtap='callPhone'
-    data-num='13501065178'
-    >联系</view>
-   </view>
-  </view>
-</template>
+  </scroll-view> 
+</view>
+<!--添加弹窗模板-->
+<template is="modal-loading" data="{{data: isloading}}" ></template>

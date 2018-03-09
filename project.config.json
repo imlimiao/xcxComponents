@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "wx640932abf3013e91",
-	"projectname": "%E5%86%AC%E5%AD%A3%E5%8C%97%E4%BA%AC",
+	"appid": "wx6d20c8e925cb6a10",
+	"projectname": "%E4%BC%81%E4%B8%9A%E5%B0%8F%E7%A8%8B%E5%BA%8F2",
 	"condition": {
 		"search": {
 			"current": -1,

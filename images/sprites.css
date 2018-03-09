@@ -1,0 +1,46 @@
+.朋友圈, .图片, .分享, .close, .s-505, .Group-9, .log{
+	background: url(sprites.png) no-repeat;
+}
+
+.朋友圈{
+	background-position: -2px -3px ;
+	width: 72px;
+	height: 72px;
+}
+
+.图片{
+	background-position: -2px -90px ;
+	width: 72px;
+	height: 72px;
+}
+
+.分享{
+	background-position: -3px -176px ;
+	width: 72px;
+	height: 72px;
+}
+
+.close{
+	background-position: 0 -130px ;
+	width: 56px;
+	height: 56px;
+}
+
+.s-505{
+	background-position: -4px -192px ;
+	width: 17px;
+	height: 17px;
+}
+
+.Group-9{
+	background-position: -33px -194px ;
+	width: 13px;
+	height: 13px;
+}
+
+.log{
+	background-position: -11px -215px ;
+	width: 17px;
+	height: 19px;
+}
+

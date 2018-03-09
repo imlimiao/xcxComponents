@@ -1,28 +1,35 @@
 <!--排行榜头部-->
-<view class='head_fixed'>
-  <view class='ranking_header'>
-    <view class='rank_left'> 
-      <view class='left_font'>当前排名</view>
-      <view class='left_num'>10</view>
+<view class='rank-list'>
+  <view class='rank-list-head'>
+    <view class='rank-list-head-left'> 
+      <view class='rank-list-head-font'>当前排名</view>
+      <view class='rank-list-head-num'>{{rank}}</view>
     </view>
-    <view class='rank_right'> 
-      <view class='left_font'>当前热度</view>
-      <view class='left_num'>1034</view>
+    <view class='rank-list-head-right'> 
+      <view class='rank-list-head-font'>当前热度</view>
+      <view class='rank-list-head-num'>{{count}}</view>
     </view>
   </view>
 
-  <view class='rank_tips'>
-  热度排行榜每日根据点赞数量进行排名
-  <span class="tips_right">查看主页></span>
+  <view class='rank-content'>
+    热度排行榜每日根据点赞数量进行排名
+    <span class="rank-content-right" bindtap="redirectToIndex">查看主页></span>
   </view>
 </view>
 
-
-  <scroll-view class="scroll-view_H" scroll-x >
-    <view class='rank_list'>
-      <view class="list_num">1</view>
-      <view class="list_icon"><image src='../../images/Avatar.png' class='qy_default_img'></image></view>
-      <view class='list_name' bindtap='showModal'>北京五八信息技术有限公司</view>
-      <view class='list_data'>4000</view>
+<scroll-view class="rank-scroll" >
+  <view class='rank-scroll-list zp-border-bottom' wx:for="{{ranklist}}" wx:key="{}">
+    <view class="rank-scroll-list-num">{{index+1}}</view>
+    <!-- 占时去除企业图标
+    <view wx:if="{{logo.length > 0}}" class="rank-scroll-list-icon"> 
+      <image src="{{logo}}" class='rank-scroll-list-icon-img'> </image>
     </view>
-  </scroll-view>
+
+    <view  class="rank-scroll-list-icon" wx:else> 
+      <image src="../../images/Avatar.png"  class='rank-scroll-list-icon-img'></image>
+    </view>
+    -->
+    <view class='rank-scroll-list-name' >{{item.name}}</view>
+    <view class='rank-scroll-list-hot'>{{item.hot}}</view>
+  </view>
+</scroll-view>
