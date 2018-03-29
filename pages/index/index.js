@@ -292,20 +292,24 @@ Page({
     const openid = this.data.openid;
     const url = config.getUserImagsUrl + this.data.enterprisedata.enterprise;
     wxRequest.getRequest(url, {})
-      .then(res => {this.qyhotCallback(res)})
-      .then(() => {
+      .then((res) => {
+        this.qyhotCallback(res);
         /*获取当前排行榜和点赞数*/
         const rankurl = config.getRankListUrl + this.data.enterprisedata.enterprise;
         return  wxRequest.getRequest(rankurl,  { openId: openid })
       })
-      .then((res)=>{ this.ranklistCallback(res)})
-      .then(() => { this.getjoblist()})
+      .then((res)=>{ 
+        this.ranklistCallback(res);
+        return Promise.resolve(this.getjoblist());
+      })
       .then(res => {
         const wxGetUserInfo = wxApi.wxGetUserInfo();
         return wxGetUserInfo();
       }).then(data => {
         const qylisturl = config.getBrowUrl + this.data.enterprisedata.enterprise;
         PostAPI.getTempleData(qylisturl, { photo: data.userInfo.avatarUrl }, this.qyphotoCallback);
+      }).catch((error)=>{
+        console.log(error);/**捕捉异常 */
       });
   },
 
